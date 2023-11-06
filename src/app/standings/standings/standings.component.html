@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col" class="column-width">Name</th>
+      <th scope="col" class="text-center">Games</th>
+      <th scope="col" class="text-center">W</th>
+      <th scope="col" class="text-center">L</th>
+      <th scope="col" class="text-center">D</th>
+      <th scope="col" class="column-width text-center">Goal Difference</th>
+      <th scope="col" class="text-center">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of standings">
+      <th scope="row" class="text-center">{{ item.rank }}</th>
+      <td class="text-center"><img [src]="item.team.logo" [appImgResizer]></td>
+      <td><a [routerLink]="['/detail/', item.team.id, currLeagueCode]" class='link-dark'>{{ item.team.name }}</a></td>
+      <td class="text-center">{{ item.all.played }}</td>
+      <td class="text-center">{{ item.all.win }}</td>
+      <td class="text-center">{{ item.all.lose }}</td>
+      <td class="text-center">{{ item.all.draw }}</td>
+      <td class="text-center">{{ item.goalsDiff }}</td>
+      <td class="text-center">{{ item.points }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,17 @@
+<table class="table table-sm">
+  <tbody>
+    <tr *ngFor="let match of listLastMatchs">
+      <td class ="column-width text-center"><img [src]="match.teams.home.logo" [appImgResizer]></td>
+      <td class ="column-width text-center">{{ match.teams.home.name }}</td>
+      <td class ="column-width text-center">{{ match.goals.home }}</td>
+      <td class ="column-width text-center">-</td>
+      <td class ="column-width text-center">{{ match.goals.away }}</td>
+      <td class ="column-width text-center">{{ match.teams.away.name }}</td>
+      <td class ="column-width text-center"><img [src]="match.teams.away.logo" [appImgResizer]></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<div class="d-grid col-4">
+  <button class="btn btn-primary" type="button" [routerLink]="['/standings/',currrentLeagueId]">Back</button>
+</div>
