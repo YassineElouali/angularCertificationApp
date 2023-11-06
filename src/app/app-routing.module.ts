@@ -6,11 +6,11 @@ import { StandingsComponent } from './standings/standings/standings.component';
 const routes: Routes = [
   { path: "", redirectTo: "/standings", pathMatch: 'full' },
   { path: "standings/:league", component: StandingsComponent },
-  { path: "detail/:id/:league", component: DetailStandingsComponent}
+  { path: "detail/:id/:league", component: DetailStandingsComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
